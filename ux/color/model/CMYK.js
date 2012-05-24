@@ -15,43 +15,43 @@ Ext.ux.color.model.CMYK = function(config) {
 		isString = Ext.isString;
 
 	/**
-	 * Cyan component
+	 * Cyan component, in the range 0..100.
 	 * @private
 	 */
 	var cyan;
 
 	/**
-	 * Magenta component
+	 * Magenta component, in the range 0..100.
 	 * @private
 	 */
 	var magenta;
 
 	/**
-	 * Yellow component
+	 * Yellow component, in the range 0..100.
 	 * @private
 	 */
 	var yellow;
 
 	/**
-	 * Key component
+	 * Key component, in the range 0..100.
 	 * @private
 	 */
 	var key;
 
 	/**
-	 * The default value of the CMYK component
+	 * The default value of the CMYK component.
 	 * @private
 	 */
 	var DEFAULT_VALUE = 0;
 
 	/**
-	 * Minimum value of the CMYK component
+	 * Minimum value of the CMYK component.
 	 * @private
 	 */
 	var MIN_VALUE = 0;
 
 	/**
-	 * Maximum value of the CMYK component
+	 * Maximum value of the CMYK component.
 	 * @private
 	 */
 	var MAX_VALUE = 100;
@@ -67,9 +67,8 @@ Ext.ux.color.model.CMYK = function(config) {
 	var FORMAT_STRING = 'C{0}M{1}Y{2}K{3}';
 
 	/**
-	 * Create a new color based on the specified CMYK values.
+	 * Set the color components from the values in the specified array.
 	 * @param {Number[]/String[]} arr
-	 * @return Ext.ux.color.model.CMYK
 	 * @private
 	 */
 	function fromArray(arr) {
@@ -77,7 +76,7 @@ Ext.ux.color.model.CMYK = function(config) {
 	};
 
 	/**
-	 * Create a new color based on the specified CMYK values.
+	 * Set the color components from the values in the specified object.
 	 * 
 	 * Supported format:
 	 * {
@@ -88,7 +87,6 @@ Ext.ux.color.model.CMYK = function(config) {
 	 * }
 	 * 
 	 * @param {Object} obj
-	 * @return Ext.ux.color.model.CMYK
 	 * @private
 	 */
 	function fromObject(obj) {
@@ -96,12 +94,11 @@ Ext.ux.color.model.CMYK = function(config) {
 	};
 
 	/**
-	 * Parse the string and create a new color based on the specified CMYK values.
+	 * Parse the string and set the color components.
 	 * 
 	 * Supported format: 'C30M45Y80K5' (case-insensitive)
 	 * 
 	 * @param {String} str
-	 * @return Ext.ux.color.model.CMYK
 	 * @private
 	 */	
 	function fromString(str) {
@@ -110,12 +107,11 @@ Ext.ux.color.model.CMYK = function(config) {
 	};
 
 	/**
-	 * Create a new color based on the specified CMYK values.
+	 * Set the color components from the values.
 	 * @param {Number/String} c Cyan component
 	 * @param {Number/String} m Magenta component
 	 * @param {Number/String} y Yellow component
 	 * @param {Number/String} k Key component
-	 * @return Ext.ux.color.model.CMYK
 	 */
 	function fromValues(c, m, y, k) {
 		cyan = prepareValue(c);
@@ -125,7 +121,7 @@ Ext.ux.color.model.CMYK = function(config) {
 	};
 
 	/**
-	 * Helper function to prepare value
+	 * Helper function to prepare value.
 	 * @param {Number/String} value
 	 * @return {Number}
 	 * @private
@@ -137,7 +133,7 @@ Ext.ux.color.model.CMYK = function(config) {
 	};
 
 	/**
-	 * Helper function to initialize color components
+	 * Helper function to initialize color components.
 	 * @private
 	 */
 	function init(config) {
@@ -216,7 +212,7 @@ Ext.ux.color.model.CMYK = function(config) {
 
 		/**
 		 * Set the cyan component of the color, in the range 0..100.
-		 * @param {Number} value
+		 * @param {Number/String} value
 		 */
 		setCyan: function(value) {
 			cyan = prepareValue(value);
@@ -224,7 +220,7 @@ Ext.ux.color.model.CMYK = function(config) {
 
 		/**
 		 * Set the magenta component of the color, in the range 0..100.
-		 * @param {Number} value
+		 * @param {Number/String} value
 		 */
 		setMagenta: function(value) {
 			magenta = prepareValue(value);
@@ -232,7 +228,7 @@ Ext.ux.color.model.CMYK = function(config) {
 
 		/**
 		 * Set the yellow component of the color, in the range 0..100.
-		 * @param {Number} value
+		 * @param {Number/String} value
 		 */
 		setYellow: function(value) {
 			yellow = prepareValue(value);
@@ -240,7 +236,7 @@ Ext.ux.color.model.CMYK = function(config) {
 
 		/**
 		 * Set the key component of the color, in the range 0..100.
-		 * @param {Number} value
+		 * @param {Number/String} value
 		 */
 		setKey: function(value) {
 			key = prepareValue(value);
