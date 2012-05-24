@@ -16,12 +16,12 @@ Ext.define('Ext.ux.color.model.RGB', {
 		return this.red;
 	},
 
-	setRed: function(value) {
-		this.red = this.validate(value);
-	},
-
 	getGreen: function() {
 		return this.green;
+	},
+
+	getBlue: function() {
+		return this.blue;
 	},
 
 	set: function(red, green, blue) {
@@ -30,12 +30,12 @@ Ext.define('Ext.ux.color.model.RGB', {
 		this.blue = this.validate(blue);
 	},
 
-	setGreen: function(value) {
-		this.green = this.validate(value);
+	setRed: function(value) {
+		this.red = this.validate(value);
 	},
 
-	getBlue: function() {
-		return this.blue;
+	setGreen: function(value) {
+		this.green = this.validate(value);
 	},
 
 	setBlue: function(value) {
